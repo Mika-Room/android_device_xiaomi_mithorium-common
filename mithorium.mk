@@ -21,7 +21,7 @@ PRODUCT_SET_DEBUGFS_RESTRICTIONS ?= true
 endif
 
 # Kernel
-TARGET_KERNEL_VERSION ?= 4.19
+TARGET_KERNEL_VERSION ?= 4.9
 
 # Platform
 TARGET_BOARD_PLATFORM ?= msm8953
@@ -638,11 +638,7 @@ PRODUCT_PACKAGES += \
 endif
 
 # Inherit the proprietary files
-ifeq ($(TARGET_KERNEL_VERSION),4.9)
-$(call inherit-product, vendor/xiaomi/mithorium-common/mithorium-common-vendor.mk)
-else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 $(call inherit-product, vendor/xiaomi/mithorium-common-4.19/mithorium-common-4.19-vendor.mk)
-endif
 
 $(call inherit-product, vendor/xiaomi/mithorium-common-graphics/mithorium-common-graphics-vendor.mk)
 

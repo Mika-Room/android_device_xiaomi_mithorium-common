@@ -270,8 +270,4 @@ TARGET_FIRMWARE_WLAN_MAC_BIN_SYMLINK_TARGET ?= /mnt/vendor/persist/wlan_mac.bin
 $(call soong_config_set,MITHORIUM_FIRMWARE_WLAN_MAC_BIN,SYMLINK_TARGET,$(TARGET_FIRMWARE_WLAN_MAC_BIN_SYMLINK_TARGET))
 
 # Inherit from the proprietary version
-ifeq ($(TARGET_KERNEL_VERSION),4.9)
-include vendor/xiaomi/mithorium-common/BoardConfigVendor.mk
-else ifeq ($(TARGET_KERNEL_VERSION),4.19)
 include vendor/xiaomi/mithorium-common-4.19/BoardConfigVendor.mk
-endif
